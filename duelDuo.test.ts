@@ -12,9 +12,13 @@ beforeEach(async () => {
 afterAll(async () => {
     driver.quit()
 })
-
+describe('test for duel duo', () => {
 test('Title shows up when page loads', async () => {
     const title = await driver.findElement(By.id('title'))
     const displayed = await title.isDisplayed()
     expect(displayed).toBe(true)
+})
+
+
+
 })
