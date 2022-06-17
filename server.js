@@ -7,6 +7,15 @@ const {shuffleArray} = require('./utils')
 app.use(express.json())
 app.use(express.static('public'))
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: '75615053bb164b97a369a8b2a0a0a23e',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+rollbar.log('Hello world!')
+
+
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname,'public/index.html'))
    
